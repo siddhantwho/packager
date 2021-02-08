@@ -20,20 +20,22 @@ def build():
     """
 
     #run build commands in shell, requires the latest version of build
-    #os.system('python -m pip install --upgrade build --user')
+    os.system('python -m pip install --upgrade build --user')
     os.system('python -m build')
 
-def upload(test):
+def upload(test_PyPI):
     
     #uploading the created distributions to the PyPI archive, requires twine
     os.system('python -m pip install --upgrade twine --user')
     if (test_PyPI):
-        os.system('python3 -m twine upload --repository testpypi dist/*')
+        os.system('python -m twine upload --repository testpypi dist/*')
     if (not test_PyPI):
-        os.system('python3 -m twine upload dist/*')
+        os.system('python -m twine upload dist/*')
 
 if __name__ == "__main__":
 
-    #test_repo = ask()
     build()
+    test_repo = ask()
+    upload(test_repo)
+    
 
