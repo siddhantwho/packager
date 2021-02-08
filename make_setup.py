@@ -2,13 +2,19 @@ import os
 import platform
 import shutil
 
-package_name = 'vardy_message'
-author_name = 'Siddhant Rao'
-author_email = 'sid96@live.com'
+
+#Please change the following to their correct values before running the program
+package_name = 'Your_package_name_here'
+author_name = 'Author Name'
+author_email = 'author@host.com'
 version_number = '0.0.1'
-url = 'none'
-description = 'A secret message from Jamie Vardy'
-protected_files = ['setup.py', 'make_setupfiles.py','upload_repo.py']
+url = 'https://github.com/author/package'
+description = 'Short description of the package'
+protected_files = ['setup.py', 'make_setup.py','upload_repo.py']
+program_language = 'Python :: 3' #change this to the language of your code
+repo_license = 'MIT License' #change to your license
+operating_system = 'OS Independent'
+
 
 def move(file):
     """
@@ -67,9 +73,9 @@ def file_creater(package_name, author_name, author_email, version_number, url, d
     f_cfg.write('author = ' + author_name + '\n')
     f_cfg.write('author_email = ' + author_email + '\n')
     f_cfg.write('classifiers = \n')
-    f_cfg.write('   Programming Language :: Python :: 3 \n')
-    f_cfg.write('   License :: OSI Approved :: MIT License \n')
-    f_cfg.write('   Operating System :: OS Independent \n')
+    f_cfg.write('   Programming Language :: ' + program_language + '\n')
+    f_cfg.write('   License :: OSI Approved :: ' + repo_license + '\n')
+    f_cfg.write('   Operating System :: ' + operating_system + '\n')
     f_cfg.write(' description =  ' + description + '\n')
     f_cfg.write(' long_description = file: README.md\n')
     f_cfg.write(' long_description_content_type = text/markdown\n')
@@ -89,25 +95,27 @@ def file_creater(package_name, author_name, author_email, version_number, url, d
     f_dyn.write('   name = "' + namepack + '",\n')
     f_dyn.write('   version = "' + str(version_number) + '",\n')
     f_dyn.write('   url = "' + url + '",\n')
-    f_dyn.write('   author = "' + author_name + '",\n')
-    f_dyn.write('   author_email = "' + author_email + '",\n')
-    f_dyn.write('   description =  "' + description + '",\n')
+    f_dyn.write('   author = "' + author_name + '\",\n')
+    f_dyn.write('   author_email = "' + author_email + '\",\n')
+    f_dyn.write('   description =  \"' + description + '\",\n')
     f_dyn.write('   long_description = long_description,\n')
     f_dyn.write('   long_description_content_type = "text/markdown",\n')
     f_dyn.write('   packages=setuptools.find_packages(),\n')
     f_dyn.write('   classifiers = [\n')
-    f_dyn.write('       "Programming Language :: Python :: 3",\n')
-    f_dyn.write('       "License :: OSI Approved :: MIT License",\n')
-    f_dyn.write('       "Operating System :: OS Independent" ],\n')
+    f_dyn.write('       \"Programming Language :: ' + program_language + '\",\n')
+    f_dyn.write('       \"License :: OSI Approved :: ' + repo_license + '\",\n')
+    f_dyn.write('       \"Operating System :: ' + operating_system + '\"],\n')
     f_dyn.write('   python_requires = ">=3.6")\n')
     f_dyn.close()
-
-
+    f_dyn.close()
 
 if __name__ == "__main__":
 
-    file_creater(package_name, author_name,
-     author_email, version_number, url, description)
+    #file_creater(package_name, author_name,
+    # author_email, version_number, url, description)
+
+    testsetup(package_name, author_name,
+    author_email, version_number, url, description)
     
 
 
