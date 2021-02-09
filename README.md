@@ -9,7 +9,30 @@ A simple tool to build PyPI packages and upload them
  
 #Instructions
 
-In a directory containing the following run
+In a directory containing the following file structure
+
+```
+project
+│   README.md
+│   LICENSE
+│
+└───package
+│   │   code.py
+│   │   morecode.py
+
+```
+
+or 
+
+```
+project
+│   README.md
+│   LICENSE
+│   code.py
+
+```
+
+run
 
 ```sh
 python make_setup.py
