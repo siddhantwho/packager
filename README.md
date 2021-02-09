@@ -5,7 +5,7 @@
 A simple tool to build PyPI packages and upload them
  
 - A make_setup program that automatically constructs the required setup files given the metadata information
-- An upload program that builds the distrubution packages and runs the commands to upload the repository to PyPI
+- An upload_repo program that builds the distrubution packages and runs the commands to upload the repository to PyPI
  
 # Instructions
 
@@ -50,5 +50,14 @@ and then run
 ```sh
 python make_setup.py
 ```
+
+This should create the required set up files in order to build the distribution. At this point you may check the setup files to see if the information is reflected correctly. If not, the make_setup program can be edited and re-run or the setup files can be modified directly. Next run
+
+```sh
+python upload_repo.py
+```
+This command will install the python module build and twine if not already installed and create the build files. The repository will then be uploaded to PyPI; you will have an option to upload to the test server first. The program will then ask you for your PyPI authentication credentials.
+
+Your module should now be available on PyPI's server and can be installed using pip!
 
  
