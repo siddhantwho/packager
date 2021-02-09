@@ -10,10 +10,12 @@ author_email = 'author@host.com'
 version_number = '0.0.1'
 url = 'https://github.com/author/package'
 description = 'Short description of the package'
-protected_files = ['setup.py', 'make_setup.py','upload_repo.py']
 program_language = 'Python :: 3' #change this to the language of your code
 repo_license = 'MIT License' #change to your license
 operating_system = 'OS Independent'
+
+#
+protected_files = ['setup.py', 'make_setup.py','upload_repo.py']
 
 
 def move(file):
